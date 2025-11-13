@@ -19,13 +19,23 @@ api.interceptors.request.use(async (config) => {
 });
 
 export const login = async (email, password) => {
-  const response = await api.post('/login', { email, password });
-  return response.data;
+  try {
+    const response = await api.post('/login', { email, password });
+    return response.data;
+  } catch (error) {
+    const message = error.response?.data?.error || 'Login failed';
+    throw new Error(message);
+  }
 };
 
 export const register = async (name, email, password) => {
-  const response = await api.post('/register', { name, email, password });
-  return response.data;
+  try {
+    const response = await api.post('/register', { name, email, password });
+    return response.data;
+  } catch (error) {
+    const message = error.response?.data?.error || 'Registration failed';
+    throw new Error(message);
+  }
 };
 
 export const getProducts = async () => {

@@ -8,13 +8,16 @@ export default function LoginScreen({ navigation }) {
   const [password, setPassword] = useState('');
 
   const handleLogin = async () => {
+    console.log('Login attempt:', { email });
     try {
       const data = await login(email, password);
+      console.log('Login successful for user:', data.user.email);
       await AsyncStorage.setItem('token', data.token);
       await AsyncStorage.setItem('user', JSON.stringify(data.user));
       navigation.replace('ProductList');
     } catch (error) {
-      Alert.alert('Erro', 'Login falhou');
+      console.log('Login failed:', error.message);
+      Alert.alert('Erro', error.message);
     }
   };
 

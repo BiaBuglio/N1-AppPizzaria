@@ -8,12 +8,15 @@ export default function RegisterScreen({ navigation }) {
   const [password, setPassword] = useState('');
 
   const handleRegister = async () => {
+    console.log('Register attempt:', { name, email });
     try {
       await register(name, email, password);
+      console.log('Register successful for user:', email);
       Alert.alert('Sucesso', 'Cadastro realizado!');
       navigation.goBack();
     } catch (error) {
-      Alert.alert('Erro', 'Cadastro falhou');
+      console.log('Register failed:', error.message);
+      Alert.alert('Erro', error.message);
     }
   };
 
