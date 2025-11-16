@@ -1,7 +1,6 @@
 # 🍕 AppPizzaria — Pizzaria Control App em React Native
 [![React Native](https://img.shields.io/badge/react--native-0.81.4-blue?logo=react)](https://reactnative.dev/)
 [![SQLite](https://img.shields.io/badge/sqlite-local%20db-blueviolet?logo=sqlite)](https://www.sqlite.org/)
-[![Node.js](https://img.shields.io/badge/node.js-server-green?logo=node.js)](https://nodejs.org/)
 [![License](https://img.shields.io/badge/license-0BSD-green)](LICENSE)
 [![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)]()
 
@@ -48,10 +47,6 @@ AppPizzaria/<br>
 |    ├── api.js → Comunicação com servidor Node.js<br>
 |    ├── cart.js → Gerenciamento do carrinho local<br>
 |    └── orders.js → Gerenciamento de pedidos locais<br>
-├── server/ — Aplicação servidor em Node.js<br>
-|    ├── package.json → Dependências do servidor<br>
-|    ├── database.js → Conexão com SQLite servidor + criação das tabelas<br>
-|    └── server.js → Servidor Express com APIs<br>
 ├── App.js — ponto de entrada e configuração de navegação<br>
 ├── app.json # Configuração do app<br>
 ├── index.js # Ponto de entrada da aplicação<br>
@@ -62,31 +57,17 @@ AppPizzaria/<br>
 
 ## 🚀 Como Executar o Projeto
 
-### Servidor Node.js
-1. **Instale as dependências do servidor**
-```bash
-cd server
-npm install
-```
-2. **Execute o servidor**
-```bash
-npm start
-```
-O servidor rodará em `http://localhost:3000`.
-
 ### Aplicativo React Native
-1. **Volte à raiz do projeto**
-```bash
-cd ..
-```
-2. **Instale as dependências**
+1. **Instale as dependências**
 ```bash
 npm install
 ```
-3. **Execute o projeto**
+2. **Execute o projeto**
 ```bash
 npx expo start
 ```
+
+**Nota:** Este projeto é apenas o aplicativo mobile. Certifique-se de que o servidor Node.js esteja rodando separadamente em `http://localhost:3000` para que o app funcione corretamente.
 
 ---
 
